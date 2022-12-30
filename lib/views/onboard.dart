@@ -27,15 +27,15 @@ class _OnBoardState extends State<OnBoard> {
         children: [
           onBoardPage(
             "splash02.png",
-            "Get your fashion store ",
+            "At Olascut Fashion Store get your fashion design store ",
           ),
           onBoardPage(
             "splash01.png",
-            "Redeem giftcard to fund your wallet account ",
+            "At Olascut Fashion Store get your fashion fast delivery ",
           ),
           onBoardPage(
             "splash1.png",
-            'Perform your banking transaction and send money to Family & friends  ',
+            'At Olascut Fashion Store delivery Nationwide  ',
           )
         ],
         onPageChanged: (value) => {setCurrentPage(value)},
@@ -71,7 +71,7 @@ class _OnBoardState extends State<OnBoard> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset('assets/images/logo_img.png', height: 50,),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 11.0, horizontal: 10),
                     child: Text(
@@ -84,16 +84,16 @@ class _OnBoardState extends State<OnBoard> {
                         fontSize: 16,),
                     ),
                   ),
-                  SizedBox(height: 30,),
+                  const SizedBox(height: 30,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children:
                     List.generate(3, (index) => getIndicator(index)),
                   ),
-                  SizedBox(height: 30,),
+                  const SizedBox(height: 30,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                    child: BigButton(textTitle:'OlasCut Store',  onTap: () {
+                    child: BigButton(textTitle:'Olascut Fashion Store',  onTap: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (context) => const Home()),
                       );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:olascut/screen/order.dart';
 
 import '../core/color_strings.dart';
-import 'dashboard.dart';
+import '../screen/dashboard.dart';
+import '../screen/profile.dart';
 
 
 class Home extends StatefulWidget {
@@ -17,8 +19,8 @@ class _HomeState extends State<Home> {
   int currentTab = 0;
   final List<Widget> screens = [
     const Dashboard(),
-    const Text('Vaults'),
-    const Text('Receipts'),
+    const OrderPage(),
+    const Profile(),
 
   ];
   final PageStorageBucket bucket = PageStorageBucket();
@@ -94,7 +96,7 @@ class _HomeState extends State<Home> {
                       child: MaterialButton(
                         onPressed: () {
                           setState(() {
-                            currentScreen = const Text('Vaults');
+                            currentScreen = const OrderPage();
                             currentTab = 1;
                           });
                         },
@@ -109,7 +111,7 @@ class _HomeState extends State<Home> {
                             Padding(
                               padding: const EdgeInsets.all(3.0),
                               child: Text(
-                                ' Store',
+                                ' Order',
                                 style: TextStyle(
                                     color: currentTab == 1
                                         ? primaryColor
@@ -129,7 +131,7 @@ class _HomeState extends State<Home> {
                       child: MaterialButton(
                         onPressed: () {
                           setState(() {
-                            currentScreen = const Text('');
+                            currentScreen = const Profile();
                             currentTab = 2;
                           });
                         },
@@ -137,13 +139,13 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Icon(
-                              FontAwesomeIcons.solidUser,
+                              FontAwesomeIcons.circleInfo,
                               color: currentTab == 2 ? primaryColor : Colors.grey,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5.0),
                               child: Text(
-                                ' Profile',
+                                ' About',
                                 style: TextStyle(
                                   color: currentTab == 2
                                       ? primaryColor
